@@ -1,105 +1,123 @@
-#Titanic Survival Predictor
-A modern web application built with Flask and a scikit-learn machine learning model to predict passenger survival chances on the Titanic. This project demonstrates a full end-to-end data science workflow, from data cleaning and model training to deployment in a responsive and interactive web interface.
 
-#Features
-Interactive Prediction Form: A user-friendly form to input passenger details.
+# Titanic Survival Predictor
 
-Real-time Validation: The form provides instant feedback and only enables the "Predict" button when all fields are valid.
+A modern web application built with **Flask** and a **scikit-learn** machine learning model to predict passenger survival chances on the Titanic.  
+This project demonstrates a full end-to-end data science workflow, from data cleaning and model training to deployment in a responsive and interactive web interface.
 
-ML-Powered Results: Utilizes a trained Logistic Regression model to predict a binary outcome (Survived/Not Survived).
+---
 
-Dynamic UI/UX: A modern, responsive frontend with animated backgrounds, glassmorphism effects, and interactive elements.
+## Features
 
-Separation of Concerns: The project is cleanly structured into a model training environment and a separate Flask application for deployment.
+- **Interactive Prediction Form** – User-friendly form to input passenger details  
+- **Real-time Validation** – Instant feedback with enabled "Predict" button only when inputs are valid  
+- **ML-Powered Results** – Trained Logistic Regression model predicts survival outcome (Survived / Not Survived)  
+- **Dynamic UI/UX** – Modern, responsive frontend with animated backgrounds, glassmorphism, and interactivity  
+- **Separation of Concerns** – Model training environment and Flask app are cleanly separated  
 
-#Technology Stack
-Backend: Python, Flask
+---
 
-Machine Learning: Scikit-learn, Pandas, NumPy
+## Technology Stack
 
-Frontend: HTML, CSS, JavaScript
+- **Backend:** Python, Flask  
+- **Machine Learning:** Scikit-learn, Pandas, NumPy  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Development:** Jupyter Notebook, Git & GitHub  
 
-Development: Jupyter Notebook, Git & GitHub
+---
 
-#Project Structure
-The repository is organized into two main parts: the model training environment and the Flask application.
+## Project Structure
 
-Titanic_main/
+```
+
+Titanic\_main/
 ├── .gitignore
 ├── requirements.txt
-├── model_training/
+├── model\_training/
 │   ├── dataset.csv
-│   ├── model_train.ipynb
-│   └── trained_model.pkl   (The final model output)
+│   ├── model\_train.ipynb
+│   └── trained\_model.pkl   # Final model output
 │
-└── titanic_app/
-    ├── app.py              (The main Flask application)
-    ├── trained_model.pkl   (A copy of the trained model for deployment)
-    ├── static/
-    │   ├── style.css
-    │   ├── script.js
-    │   └── predict.js
-    └── templates/
-        ├── index.html
-        ├── predict.html
-        └── result.html
-#Setup and Installation
-To run this project on your local machine, follow these steps:
+└── titanic\_app/
+├── app.py              # Main Flask application
+├── trained\_model.pkl   # Copy of the trained model for deployment
+├── static/
+│   ├── style.css
+│   ├── script.js
+│   └── predict.js
+└── templates/
+├── index.html
+├── predict.html
+└── result.html
 
-Clone the repository:
+````
 
-Bash
+---
 
-git clone https://github.com/Karthik-3494/Titanic_survival_predictor.git
-cd Titanic_main
-Navigate to the Flask app directory:
+## Setup and Installation
 
-Bash
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Karthik-3494/Titanic_survival_predictor.git
+   cd Titanic_main
+````
 
-cd titanic_app
-Create and activate a virtual environment:
+2. Navigate to the Flask app directory:
 
-On Windows:
+   ```sh
+   cd titanic_app
+   ```
 
-Bash
+3. Create and activate a virtual environment:
 
-python -m venv .venv
-.\.venv\Scripts\Activate
-On macOS/Linux:
+   * On Windows:
 
-Bash
+     ```sh
+     python -m venv .venv
+     .\.venv\Scripts\Activate
+     ```
+   * On macOS/Linux:
 
-python3 -m venv .venv
-source .venv/bin/activate
-Install the required dependencies:
+     ```sh
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
 
-Bash
+4. Install the required dependencies:
 
-pip install -r ../requirements.txt
-Run the Flask application:
+   ```sh
+   pip install -r ../requirements.txt
+   ```
 
-Bash
+5. Run the Flask application:
 
-python app.py
-Access the application:
-Open your web browser and go to http://127.0.0.1:5000.
+   ```sh
+   python app.py
+   ```
 
-#Usage
-Once the application is running, you will see the landing page.
+6. Access the application:
+   Open your browser and go to `http://127.0.0.1:5000`.
 
-Click the "Get Started" button.
+---
 
-You will be redirected to a form. Fill in all the passenger details.
+## Usage
 
-The "Predict Survival" button will become clickable once all fields are valid.
+1. Start the application and open the landing page.
+2. Click **"Get Started"** to open the prediction form.
+3. Fill in all passenger details.
+4. The **"Predict Survival"** button activates once all inputs are valid.
+5. Submit the form to get the prediction result: **YES** or **NO**.
+6. Use **"Try Again"** to go back to the form.
 
-Click the button to submit the data to the model.
+---
 
-The next page will display the prediction result: a clear "YES" or "NO".
+## Model Training
 
-Click "Try Again" to return to the form page.
+The machine learning model is a **Logistic Regression** classifier trained on the Titanic dataset.
+The full workflow (data cleaning, feature engineering, training, evaluation) is documented in:
 
-#Model Training
-The machine learning model is a Logistic Regression classifier trained on the well-known Titanic dataset. The complete process of data cleaning, feature engineering, model training, and evaluation is documented in the Jupyter Notebook located at:
+`model_training/model_train.ipynb`
 
-model_training/model_train.ipynb
+```
+
+Do you want me to also add a **"Contributing"** and **"License"** section to make it GitHub-ready, or keep it just like this?
+```
