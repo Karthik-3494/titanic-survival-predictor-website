@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-aurora"></div>
+
+    <main class="content-card">
+        <h1>Would You Survive the Titanic?</h1>
+        <p>Step aboard the legendary ship and discover your fate. Our advanced model analyzes key factors to predict your chances of survival.</p>
+        <a href="/predict" class="cta-button" id="startButton">
+            <span>Get Started</span>
+        </a>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if prediction == 0 %}
+            <h1 class="result-text not-survived">NO</h1>
+            <p>Unfortunately, the prediction indicates you would not have survived.</p>
+
+        {% else %}
+            <h1 class="result-text survived">YES</h1>
+            <p>Congratulations! The prediction indicates you would have survived.</p>
+
+        {% endif %}
+
+        <a href="/predict" class="cta-button">Try Again</a>
+</body>
+</html>

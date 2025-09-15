@@ -1,0 +1,239 @@
+/* --- CSS Variables and Global Setup --- */
+:root {
+    --background-color: #020412;
+    --card-background: rgba(12, 18, 44, 0.5);
+    --primary-text: #E2E8F0;
+    --secondary-text: #94A3B8;
+    --accent-glow: #00A9FF;
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- The Aurora Animated Background --- */
+.background-aurora {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150vw;
+    height: 150vh;
+    background: radial-gradient(circle at 20% 20%, #4a00e0 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, #00a9ff 0%, transparent 25%),
+                radial-gradient(circle at 50% 90%, #8e2de2 0%, transparent 30%);
+    filter: blur(100px);
+    opacity: 0.6;
+    animation: moveAurora 20s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes moveAurora {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    100% { transform: translate(-50%, -50%) rotate(180deg) scale(1.2); }
+}
+
+/* --- Frosted Glass Content Card --- */
+.content-card {
+    text-align: center;
+    width: 90%;
+    max-width: 650px;
+    padding: 2rem 1.5rem; /* Better padding for mobile */
+    position: relative;
+    z-index: 1;
+
+    background: var(--card-background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    animation: fadeIn 1.5s ease-out;
+}
+@media (min-width: 600px) {
+    .content-card {
+        padding: 3rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--secondary-text);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+/* --- Modern Interactive Button --- */
+.cta-button {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--primary-text);
+    text-decoration: none;
+    background: linear-gradient(90deg, #3A3D98, #5833D6);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 169, 255, 0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 169, 255, 0.6);
+}
+
+/* --- Form & Result Page Styles --- */
+
+.prediction-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile */
+    gap: 1.2rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+@media (min-width: 600px) {
+    .prediction-form {
+        grid-template-columns: auto 1fr; /* 2 columns on larger screens */
+        gap: 1.5rem;
+    }
+}
+
+.form-group {
+    grid-column: 1 / -1;
+    display: contents;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--secondary-text);
+    text-align: left; /* Default to left align for mobile */
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 600px) {
+    .form-group label {
+        text-align: right; /* Right align on larger screens */
+        padding-right: 1.5rem;
+        margin-bottom: 0;
+    }
+    .form-group {
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+}
+
+
+.form-group input,
+.form-group select {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: var(--primary-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #616a7c;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 10px rgba(0, 169, 255, 0.3);
+}
+
+.prediction-form .cta-button {
+    margin-top: 1rem;
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+/* Result Page Styles */
+.result-card {
+    animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.result-card p {
+    margin-bottom: 2rem;
+}
+
+.result-text {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.result-text.survived {
+    color: #4ade80; /* A nice green */
+}
+
+.result-text.not-survived {
+    color: #f87171; /* A soft red */
+}
+
+/* Modern Form Validation Styles */
+.form-group.invalid label {
+    color: #f87171;
+}
+
+.form-group.invalid input,
+.form-group.invalid select {
+    border-color: #f87171;
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.3);
+}
+
+.cta-button:disabled {
+    background: rgba(30, 41, 59, 0.5);
+    color: #94A3B8;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
