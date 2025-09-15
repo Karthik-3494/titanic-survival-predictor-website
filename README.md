@@ -29,25 +29,20 @@ This project demonstrates a full end-to-end data science workflow, from data cle
 
 ```
 
-Titanic\_main/
+Titanic_main/
 ├── .gitignore
 ├── requirements.txt
-├── model\_training/
-│   ├── dataset.csv
-│   ├── model\_train.ipynb
-│   └── trained\_model.pkl   # Final model output
+├── trained_model.pkl
+├── model_training/
+│ ├── dataset.csv
+│ ├── model_train.ipynb
+│ └── trained_model.pkl
 │
-└── titanic\_app/
-├── app.py              # Main Flask application
-├── trained\_model.pkl   # Copy of the trained model for deployment
-├── static/
-│   ├── style.css
-│   ├── script.js
-│   └── predict.js
-└── templates/
-├── index.html
-├── predict.html
-└── result.html
+└── titanic_app/
+   ├── app.py # Main Flask application
+   ├── README.md
+   ├── static/
+   └── templates/
 
 ````
 
