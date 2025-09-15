@@ -59,7 +59,7 @@ Titanic\_main/
    ```sh
    git clone https://github.com/Karthik-3494/Titanic_survival_predictor.git
    cd Titanic_main
-````
+
 
 2. Navigate to the Flask app directory:
 
@@ -117,7 +117,6 @@ The full workflow (data cleaning, feature engineering, training, evaluation) is 
 
 `model_training/model_train.ipynb`
 
-```
 
-Do you want me to also add a **"Contributing"** and **"License"** section to make it GitHub-ready, or keep it just like this?
-```
+
+
