@@ -112,7 +112,7 @@ Titanic\_main/
 
 ## Model Training
 
-The machine learning model is a **Logistic Regression** classifier trained on the Titanic dataset.
+The machine learning model is a **Random Forest** classifier trained on the Titanic dataset.
 The full workflow (data cleaning, feature engineering, training, evaluation) is documented in:
 
 `model_training/model_train.ipynb`
