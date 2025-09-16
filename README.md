@@ -1,5 +1,5 @@
 
-# Titanic Survival Predictor wwebsite
+# Titanic Survival Predictor website
 
 A modern web application built with **Flask** and a **scikit-learn** machine learning model to predict passenger survival chances on the Titanic.  
 This project demonstrates a full end-to-end data science workflow, from data cleaning and model training to deployment in a responsive and interactive web interface.
